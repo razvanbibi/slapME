@@ -301,34 +301,6 @@ export default function HomePage() {
 
 
   useEffect(() => {
-    async function enrich() {
-      for (const s of topSupporters) {
-        if (s.name || s.avatar) continue;
-        try {
-          const res = await fetch(`/api/neynar-profile?address=${s.address}`);
-          if (!res.ok) continue;
-          const data = await res.json();
-          const name = data.displayName || data.username || "";
-          const avatar = data.pfpUrl || "";
-
-          setTopSupporters((prev) => {
-            const updated = prev.map((p) =>
-              p.address === s.address ? { ...p, name, avatar } : p
-            );
-            return updated;
-          });
-        } catch { }
-      }
-    }
-
-    if (topSupporters.length > 0) {
-      void enrich();
-    }
-  },
-    [topSupporters]);
-
-
-  useEffect(() => {
     void loadDonationLeaderboard();
   }, []);
 
@@ -450,7 +422,6 @@ export default function HomePage() {
         setHasIdentityNFT(balance > 0);
       } catch (err) {
         console.error("Identity NFT check failed", err);
-        // ❌ এখানে false সেট কোরো না
       }
     }
 
