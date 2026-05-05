@@ -282,7 +282,7 @@ export default function HomePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [account, ethReady]);
 
-  
+
   useEffect(() => {
     // initial animation already true
 
@@ -471,9 +471,9 @@ export default function HomePage() {
     if (!eth) throw new Error("Wallet not found");
 
     // 🔥 MiniPay skip
-  if ((window as any).ethereum?.isMiniPay) {
-    return;
-  }
+    if ((window as any).ethereum?.isMiniPay) {
+      return;
+    }
 
     const chainId = await eth.request({ method: "eth_chainId" });
 
@@ -774,6 +774,11 @@ export default function HomePage() {
       }
 
       await tx.wait();
+      setPendingTokens(BigInt(0));
+      setPendingSilver(BigInt(0));
+      setPendingGold(BigInt(0));
+      setPendingDiamond(BigInt(0));
+      setPendingLegendary(BigInt(0));
 
       setStatus("Claim successful 🎉");
 
