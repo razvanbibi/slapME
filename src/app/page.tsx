@@ -783,6 +783,9 @@ export default function HomePage() {
       setStatus("Claim successful 🎉");
 
       setRecentlyClaimed(true);
+      // 🔥 FLASH EFFECT
+      setFlashGlow(true);
+      setTimeout(() => setFlashGlow(false), 1200);
       await refreshData();
 
       showToast(
@@ -1441,6 +1444,7 @@ export default function HomePage() {
           className={`
     p-4 space-y-3
     ${isDarkMode ? glassCard : ""}
+    ${flashGlow ? "ring-2 ring-sky-400 animate-pulse" : ""}
   `}
         >
 
@@ -1638,7 +1642,11 @@ export default function HomePage() {
                   }
   `}
               >
-                {pendingTokens && pendingTokens > BigInt(0) ? "Claim all" : "Claimed"}
+                {(pendingTokens ?? BigInt(0)) > BigInt(0)
+                  ? "Claim all"
+                  : recentlyClaimed
+                    ? "Claimed"
+                    : "Claimed"}
               </button>
 
             </div>
