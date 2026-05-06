@@ -923,7 +923,7 @@ export default function HomePage() {
 
 
   async function handleShare() {
-    const APP_URL = "https://celo-daily.vercel.app/";
+    const APP_URL = "celo-daily.vercel.app";
 
     const text =
       "🟦 CeloDaily\n\n" +
