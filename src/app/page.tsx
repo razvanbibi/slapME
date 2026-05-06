@@ -865,7 +865,7 @@ export default function HomePage() {
       await ensureCeloNetwork();
 
       // 1️⃣ Approve
-      setStatus("Approve USDC in wallet...");
+      setStatus("Approve USDm in wallet...");
 
       const { usdc } = await getUsdcContractWithSigner();
 
@@ -902,7 +902,7 @@ export default function HomePage() {
       showToast(
         {
           type: "donation",
-          message: `Thank you! Donated ${amountNumber} USDC 💙`,
+          message: `Thank you! Donated ${amountNumber} USDm 💙`,
         },
         2500
       );
@@ -1882,13 +1882,13 @@ export default function HomePage() {
               className={`text-[11px] ${isDarkMode ? "text-slate-400" : "text-slate-900"
                 }`}
             >
-              {showDonate ? "Hide" : "Tip in USDC on Celo"}
+              {showDonate ? "Hide" : "Tip in USDm on Celo"}
             </span>
           </button>
 
           {showDonate && (
             <div className="mt-3 space-y-3 text-xs bg-slate-950/80 rounded-2xl p-3 shadow-inner shadow-slate-950">
-              <p className="text-slate-300">Tip in USDC on Celo</p>
+              <p className="text-slate-300">Tip in USDm on Celo</p>
 
               <div className="flex flex-wrap gap-2">
                 {[1, 5, 10, 100].map((v) => (
@@ -1902,7 +1902,7 @@ export default function HomePage() {
                         : "border-slate-700 bg-slate-900 text-slate-300"
                       }`}
                   >
-                    {v} USDC
+                    {v} USDm
                   </button>
                 ))}
               </div>
@@ -1957,7 +1957,7 @@ export default function HomePage() {
                           </span>
                         </div>
                         <span className="text-[11px]">
-                          {s.total.toFixed(2)} USDC
+                          {s.total.toFixed(2)} USDm
                         </span>
                       </li>
                     ))}
@@ -2042,7 +2042,7 @@ export default function HomePage() {
             <ul className="text-[11px] text-slate-200 space-y-1 pl-4 list-disc">
               <li>Tap <span className="font-semibold">Check-in</span> once per day to keep your streak alive.</li>
               <li>Claim your <span className="font-semibold">0xtxn</span> rewards when the button turns pink.</li>
-              <li>Tip in Celo USDC to climb the supporter leaderboard.</li>
+              <li>Tip in Mento Dollar (USDm) to climb the supporter leaderboard.</li>
             </ul>
 
             <button
@@ -2620,7 +2620,7 @@ export default function HomePage() {
             </p>
 
             <p className="text-[11px] text-slate-400">
-              If you want, you can also support the project by tipping Celo USDC from the Support creator section below. 💙
+              If you want, you can also support the project by tipping Mento Dollar (USDm) from the Support creator section below. 💙
             </p>
           </div>
         </div>
