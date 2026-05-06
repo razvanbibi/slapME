@@ -385,27 +385,6 @@ export default function HomePage() {
     return { provider, signer, usdc };
   }
 
-  useEffect(() => {
-    if (!account) return;
-
-    const timeout = setTimeout(() => {
-      fetch("/api/profile/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          address: account,
-          name: profileName,
-          avatar: profileAvatar,
-          highestStreak: highestStreak ? Number(highestStreak) : 0,
-        }),
-      });
-    }, 800); // debounce
-
-    return () => clearTimeout(timeout);
-  }, [account, profileName, profileAvatar, highestStreak]);
-
-
-
 
   useEffect(() => {
     if (!account || !ethReady) return;
@@ -447,16 +426,41 @@ export default function HomePage() {
     }
   }, [account]);
 
-  function saveProfile(name: string, avatar: string) {
+  async function saveProfile(name: string, avatar: string) {
     if (!account) return;
 
+    // local state
+    setProfileName(name);
+    setProfileAvatar(avatar);
+
+    // local storage
     localStorage.setItem(
       `profile:${account}`,
       JSON.stringify({ name, avatar })
     );
 
-    setProfileName(name);
-    setProfileAvatar(avatar);
+    // 🔥 instant Redis sync
+    try {
+      const res = await fetch("/api/profile/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          address: account,
+          name,
+          avatar,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!data.ok) {
+        console.error("Profile sync failed");
+      }
+    } catch (err) {
+      console.error("Profile upload failed", err);
+    }
   }
 
   function handleAvatarUpload(e: React.ChangeEvent<HTMLInputElement>) {
