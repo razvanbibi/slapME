@@ -1320,7 +1320,7 @@ export default function HomePage() {
                                   ? profileAvatar || "/avatar.png"
                                   : u.avatar || "/avatar.png"
                               }
-                              className="h-5 w-5 rounded-full object-cover"
+                              className="h-6 w-6 rounded-full object-cover ring-1 ring-sky-400/30"
                             />
 
                             <span>
