@@ -1056,6 +1056,42 @@ export default function HomePage() {
     }
   }
 
+  async function handleDevMultiSend() {
+    try {
+      setDevRunning(true);
+
+      const recipients = devMultiAddresses
+        .split("\n")
+        .map((x) => x.trim())
+        .filter(Boolean);
+
+      const amounts = devMultiAmounts
+        .split("\n")
+        .map((x) => ethers.parseUnits(x.trim(), 18));
+
+      if (recipients.length !== amounts.length) {
+        throw new Error("Address & amount count mismatch");
+      }
+
+      const { contract } = await getTokenContractWithSigner();
+
+      const tx = await contract.multiSend(
+        recipients,
+        amounts
+      );
+
+      await tx.wait();
+
+      setStatus("MultiSend successful ✅");
+    } catch (err: any) {
+      console.error(err);
+
+      setStatus(err.message ?? "MultiSend failed");
+    } finally {
+      setDevRunning(false);
+    }
+  }
+
 
   async function loadDonationLeaderboard() {
     try {
