@@ -673,6 +673,7 @@ export default function HomePage() {
 
       const pending = (await refreshData())?.pending ?? BigInt(0);
       setPendingTokens(pending);
+      await refreshData();
 
 
 
