@@ -169,6 +169,7 @@ export default function HomePage() {
   const [devMultiAmounts, setDevMultiAmounts] = useState("");
 
   const [isMiniPay, setIsMiniPay] = useState(false);
+  const [showBadgeTooltip, setShowBadgeTooltip] = useState(false);
 
 
 
