@@ -610,6 +610,7 @@ export default function HomePage() {
       setStreak(st);
       setHighestStreak(hs);
       setPendingTokens(pt);
+      setPendingRewards(formatToken(pt));
       setPaused(isPaused);
 
       // pending badges
