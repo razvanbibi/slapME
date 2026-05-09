@@ -85,6 +85,7 @@ export default function HomePage() {
   const [account, setAccount] = useState<string | null>(null);
   const [streak, setStreak] = useState<bigint | null>(null);
   const [highestStreak, setHighestStreak] = useState<bigint | null>(null);
+  const [pendingRewards, setPendingRewards] = useState("0");
   const [pendingTokens, setPendingTokens] = useState<bigint | null>(null);
   const [paused, setPaused] = useState<boolean | null>(null);
 
