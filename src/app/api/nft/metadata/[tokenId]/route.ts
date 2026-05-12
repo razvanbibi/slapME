@@ -26,9 +26,9 @@ export async function GET(
 
   return NextResponse.json({
     name: profile?.name
-      ? `BaseDaily Identity — ${profile.name}`
-      : "BaseDaily Identity",
-    description: "Dynamic BaseDaily Identity NFT",
+      ? `CeloDaily Identity — ${profile.name}`
+      : "CeloDaily Identity",
+    description: "Dynamic CeloDaily Identity NFT",
     image: `${origin}/api/nft/image/${tokenId}`,
     image_url: `${origin}/api/nft/image/${tokenId}`,
     attributes: [
@@ -36,7 +36,6 @@ export async function GET(
         trait_type: "Highest Streak",
         value: highestStreak,
       },
-     
     ],
   });
 }
