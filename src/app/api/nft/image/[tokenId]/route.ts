@@ -36,11 +36,11 @@ export async function GET(
   }
 }
 const avatarUrl =
-  profile?.avatar ?? "https://basedaily-miniapp.vercel.app/avatar.png";
+  profile?.avatar ?? "https://celo-daily.vercel.app/avatar.png";
 
 const avatarBase64 = await fetchAsBase64(avatarUrl);
 const logoBase64 = await fetchAsBase64(
-  "https://basedaily-miniapp.vercel.app/logo-0x.png"
+  "https://celo-daily.vercel.app/logo-0x.png"
 );
 
 
