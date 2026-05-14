@@ -1711,11 +1711,9 @@ export default function HomePage() {
                   className={`text-3xl font-bold tracking-tight ${isDarkMode ? "text-sky-200" : "text-sky-500"
                     }`}
                 >
-
                   {unclaimedReadable ?? "0"}
                 </span>
               </div>
-
               {/* RIGHT: Unclaimed badges */}
               <div className="flex flex-col items-end gap-1">
 
@@ -1754,12 +1752,10 @@ export default function HomePage() {
                       ? <BadgeGlow icon="🥇" count={pendingGoldCount} />
                       : <BadgeGhost icon="🥇" />
                     }
-
                     {pendingDiamondCount > 0
                       ? <BadgeGlow icon="💎" count={pendingDiamondCount} />
                       : <BadgeGhost icon="💎" />
                     }
-
                     {pendingLegendaryCount > 0
                       ? <BadgeGlow icon="🌟" count={pendingLegendaryCount} />
                       : <BadgeGhost icon="🌟" />
@@ -1786,15 +1782,9 @@ export default function HomePage() {
                 >
                   {hasIdentityNFT ? "View Identity" : "Mint Identity"}
                 </button>
-
               </div>
-
-
             </div>
-
-
           </div>
-
           {account && (
             <div className="flex justify-center mt-2">
               <button
@@ -1826,7 +1816,6 @@ export default function HomePage() {
                     ? "Claimed"
                     : "Claimed"}
               </button>
-
             </div>
           )}
         </section>
@@ -1851,7 +1840,6 @@ export default function HomePage() {
               >
                 <span className="text-lg">🏅</span> Badges
               </button>
-
               {showBadgesTip && (
                 <div className="absolute z-50 top-full mt-2 w-64 rounded-2xl
                     bg-slate-950/95 backdrop-blur-xl
@@ -1867,7 +1855,6 @@ export default function HomePage() {
                 </div>
               )}
             </div>
-
             <HoverInfo title="Badge milestones">
               <ul className="list-disc pl-4 space-y-1">
                 <li>🥈 Silver — 7 days</li>
@@ -1877,29 +1864,22 @@ export default function HomePage() {
               </ul>
             </HoverInfo>
           </div>
-
-
           {/* progress path */}
           <div className="relative mt-1 mb-2"
             onClick={() => {
               const runner = document.getElementById("avatar-runner");
               if (!runner) return;
-
               runner.style.setProperty(
                 "--target-x",
                 `${badgeProgress * 100}%`
               );
-
               runner.classList.remove("hidden");
               runner.style.animation = "avatar-run 3s ease-out forwards";
-
               // hide original avatar briefly
               const originals = document.querySelectorAll("[data-avatar-main]");
               originals.forEach(el => {
                 (el as HTMLElement).style.opacity = "0";
               });
-
-
             }}
           >
             {/* base line */}
@@ -1916,7 +1896,6 @@ export default function HomePage() {
                 }}
               />
             </div>
-
             {/* badge icons – SKETCH BASED POSITIONS */}
             <div className="absolute inset-0 -top-3 text-lg">
               <span className="absolute left-[28%] -translate-x-1/2">🥈</span>
@@ -1956,7 +1935,6 @@ export default function HomePage() {
                   (el as HTMLElement).style.opacity = "1";
                 });
               }}
-
               className="pointer-events-none absolute -top-8 hidden"
               style={{ left: "5%", transform: "translateX(-50%)" }}
             >
@@ -1967,26 +1945,21 @@ export default function HomePage() {
                   className="h-full w-full object-cover"
                 />
               </div>
-
               {/* legs — OUTSIDE avatar */}
               <div className="absolute top-[28px] left-1/2 -translate-x-1/2 flex gap-[4px]">
                 <span className="leg leg-left" />
                 <span className="leg leg-right" />
               </div>
             </div>
-
           </div>
-
           <p
             className={`text-[11px] ${isDarkMode ? "text-slate-500" : "text-slate-900"
               }`}
           >
-
             As your streak grows, your avatar moves along the badge path. Silver,
             Gold, Diamond and Legendary/Loyalty badges will unlock at different
             milestones.
           </p>
-
           {/* your badges */}
           <div className="mt-1 grid grid-cols-2 gap-2 text-xs">
             <BadgeCard
@@ -1995,31 +1968,26 @@ export default function HomePage() {
               owned={Math.max(totalSilverCount - pendingSilverCount, 0)}
               isDarkMode={isDarkMode}
             />
-
             <BadgeCard
               icon="🥇"
               name="Gold"
               owned={Math.max(totalGoldCount - pendingGoldCount, 0)}
               isDarkMode={isDarkMode}
             />
-
             <BadgeCard
               icon="💎"
               name="Diamond"
               owned={Math.max(totalDiamondCount - pendingDiamondCount, 0)}
               isDarkMode={isDarkMode}
             />
-
             <BadgeCard
               icon="🌟"
               name="Legendary / Loyalty"
               owned={Math.max(totalLegendaryCount - pendingLegendaryCount, 0)}
               isDarkMode={isDarkMode}
             />
-
           </div>
         </section>
-
         {/* Donation */}
         <section
           className={`
