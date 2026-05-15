@@ -1995,7 +1995,6 @@ export default function HomePage() {
     ${isDarkMode ? glassCard : ""}
   `}
         >
-
           <button
             type="button"
             onClick={() => setShowDonate((v) => !v)}
