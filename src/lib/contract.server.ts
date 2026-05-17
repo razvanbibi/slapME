@@ -3,7 +3,7 @@ import { JsonRpcProvider, Contract } from "ethers";
 import { OXTXN_STREAK_CONTRACT } from "./contract.abi";
 import { OXTXN_STREAK_ABI } from "./contract.abi";
 
-// Base mainnet public RPC (simple & safe)
+// Celo mainnet public RPC (simple & safe)
 const RPC_URL = "https://forno.celo.org";
 
 export function getReadOnlyContractServer() {
