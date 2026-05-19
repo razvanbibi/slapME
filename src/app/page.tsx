@@ -13,6 +13,7 @@ import {
 import { ethers } from "ethers";
 
 import TodayMessageLoop from "./TodayMessageLoop";
+import { saveDonation } from "@/lib/donationStore";
 
 type Status = string | null;
 
@@ -917,6 +918,10 @@ export default function HomePage() {
 
       // ✅ success
       setStatus("Donation successful 💙");
+      await saveDonation(
+        account,
+        amountNumber * 1_000_000
+      );
 
       await loadDonationLeaderboard();
 
