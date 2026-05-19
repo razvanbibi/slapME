@@ -386,7 +386,7 @@ export default function HomePage() {
       setLoading(false);
     }
   }
-  async function getUsdcContractWithSigner() {
+  async function getUSDmContractWithSigner() {
     const eth = getEthereum();
     if (!eth) throw new Error("Wallet not found");
 
@@ -888,7 +888,7 @@ export default function HomePage() {
       // 1️⃣ Approve
       setStatus("Approve USDm in wallet...");
 
-      const { usdc } = await getUsdcContractWithSigner();
+      const { usdc } = await getUSDmContractWithSigner();
 
       const approveTx = await usdc.approve(
         DONATION_CONTRACT,
