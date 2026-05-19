@@ -1125,7 +1125,9 @@ export default function HomePage() {
       for (const log of logs) {
         const parsed = iface.decodeEventLog("Donation", log.data, log.topics);
         const donor = (parsed.donor as string).toLowerCase();
-        const amount = Number(parsed.amount as bigint) / 1_000_000;
+        const amount = Number(
+          ethers.formatUnits(parsed.amount as bigint, 18)
+        );
 
         totals[donor] = (totals[donor] ?? 0) + amount;
       }
