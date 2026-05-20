@@ -925,7 +925,7 @@ export default function HomePage() {
       const signer = await provider.getSigner();
 
       const donationContract = new ethers.Contract(
-        DONATION_CONTRACT,
+        "0x6ea4C7e400cC455712e284883E74B49402C5C818",
         ["function donate(uint256 amount)"],
         signer
       );
