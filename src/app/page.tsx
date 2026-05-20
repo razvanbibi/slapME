@@ -7,6 +7,8 @@ import {
   getReadOnlyContract,
   formatToken,
   getTokenContractWithSigner,
+  getVaultContractWithSigner,
+  getVaultReadOnlyContract,
 } from "@/lib/contract";
 
 
