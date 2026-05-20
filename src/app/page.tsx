@@ -2311,7 +2311,7 @@ export default function HomePage() {
   "
             />
 
-            <div className="flex items-center justify-between">
+            <div className="relative flex items-center justify-center">
               <h2 className="text-lg font-semibold text-white">
                 Vault
               </h2>
