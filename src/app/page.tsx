@@ -2284,7 +2284,19 @@ export default function HomePage() {
       animate-[overlayFade_0.35s_ease-out]
     "
         >
-          <div className="w-full max-w-sm rounded-3xl bg-slate-950 border border-white/10 p-5 space-y-4">
+          <div className="
+    w-full max-w-sm
+    rounded-3xl
+    bg-slate-950/90 backdrop-blur-xl
+    border border-cyan-400/20
+    p-5 space-y-4
+
+    shadow-[0_0_30px_rgba(34,211,238,0.18)]
+    animate-[vaultPop_0.35s_ease-out]
+
+    relative overflow-hidden
+  "
+          >
 
             <div className="flex items-center justify-between">
               <h2 className="text-lg font-semibold text-white">
