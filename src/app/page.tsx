@@ -36,8 +36,7 @@ type Supporter = {
 const USDM_TOKEN_ADDRESS = "0x765DE816845861e75A25fCA122bb6898B8B1282a";
 
 
-const DONATION_CONTRACT =
-  "0x6ea4C7e400cC455712e284883E74B49402C5C818" as const; // CeloDailyDonations
+
 
 
 function AvatarBubbleStream({ avatar }: { avatar: string }) {
@@ -909,7 +908,7 @@ export default function HomePage() {
       const { usdc } = await getUSDmContractWithSigner();
 
       const approveTx = await usdc.approve(
-        DONATION_CONTRACT,
+
         amountScaled
       );
 
@@ -1233,7 +1232,7 @@ export default function HomePage() {
       const donationTopic = ethers.id("Donation(address,uint256,uint256)");
 
       const logs = await provider.getLogs({
-        address: DONATION_CONTRACT,
+
         topics: [donationTopic],
         fromBlock: BigInt(0),
         toBlock: "latest",
@@ -2276,6 +2275,90 @@ export default function HomePage() {
         </footer>
 
       </div>
+
+      {showVault && (
+        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center px-4">
+          <div className="w-full max-w-sm rounded-3xl bg-slate-950 border border-white/10 p-5 space-y-4">
+
+            <div className="flex items-center justify-between">
+              <h2 className="text-lg font-semibold text-white">
+                Vault
+              </h2>
+
+              <button
+                onClick={() => setShowVault(false)}
+                className="text-slate-400 hover:text-white"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="space-y-1 text-sm">
+              <p className="text-slate-400">
+                Total Vault Balance
+              </p>
+
+              <p className="text-2xl font-bold text-cyan-300">
+                {vaultBalance} USDm
+              </p>
+            </div>
+
+            <div className="space-y-1 text-sm">
+              <p className="text-slate-400">
+                Your Vault Balance
+              </p>
+
+              <p className="text-xl font-semibold text-white">
+                {userVaultBalance} USDm
+              </p>
+            </div>
+
+            <input
+              type="number"
+              value={vaultAmount}
+              onChange={(e) => setVaultAmount(e.target.value)}
+              placeholder="Amount"
+              className="
+          w-full
+          rounded-2xl
+          bg-slate-900
+          border border-slate-700
+          px-4 py-3
+          text-white
+          outline-none
+        "
+            />
+
+            <div className="grid grid-cols-2 gap-3">
+              <button
+                onClick={handleVaultDeposit}
+                className="
+            rounded-2xl
+            py-3
+            font-semibold
+            bg-emerald-400
+            text-slate-950
+          "
+              >
+                Deposit
+              </button>
+
+              <button
+                onClick={handleVaultWithdraw}
+                className="
+            rounded-2xl
+            py-3
+            font-semibold
+            bg-cyan-400
+            text-slate-950
+          "
+              >
+                Withdraw
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Onboarding overlay */}
       {showOnboarding && (
