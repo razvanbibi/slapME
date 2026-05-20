@@ -2277,7 +2277,13 @@ export default function HomePage() {
       </div>
 
       {showVault && (
-        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center px-4">
+        <div className="
+      fixed inset-0 z-50
+      flex items-center justify-center px-4
+      bg-black/70 backdrop-blur-sm
+      animate-[overlayFade_0.35s_ease-out]
+    "
+        >
           <div className="w-full max-w-sm rounded-3xl bg-slate-950 border border-white/10 p-5 space-y-4">
 
             <div className="flex items-center justify-between">
