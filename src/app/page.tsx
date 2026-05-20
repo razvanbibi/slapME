@@ -2370,32 +2370,93 @@ export default function HomePage() {
         "
             />
 
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-3 pt-1">
+
               <button
                 onClick={handleVaultDeposit}
                 className="
-            rounded-2xl
-            py-3
-            font-semibold
-            bg-emerald-400
-            text-slate-950
-          "
+      group
+      relative
+      overflow-hidden
+
+      rounded-2xl
+      py-3.5
+
+      bg-gradient-to-r
+      from-emerald-400
+      via-emerald-300
+      to-cyan-300
+
+      text-slate-950
+      font-semibold
+      tracking-wide
+
+      shadow-[0_10px_25px_rgba(16,185,129,0.35)]
+
+      hover:scale-[1.02]
+      hover:brightness-110
+
+      active:scale-[0.97]
+
+      transition-all duration-200
+    "
               >
-                Deposit
+                <span className="relative z-10">
+                  Deposit
+                </span>
+
+                <div
+                  className="
+        absolute inset-0
+        opacity-0 group-hover:opacity-100
+        transition
+        bg-white/10
+      "
+                />
               </button>
 
               <button
                 onClick={handleVaultWithdraw}
                 className="
-            rounded-2xl
-            py-3
-            font-semibold
-            bg-cyan-400
-            text-slate-950
-          "
+      group
+      relative
+      overflow-hidden
+
+      rounded-2xl
+      py-3.5
+
+      bg-slate-900
+      border border-cyan-400/20
+
+      text-cyan-300
+      font-semibold
+      tracking-wide
+
+      shadow-[0_10px_25px_rgba(34,211,238,0.12)]
+
+      hover:border-cyan-300/40
+      hover:bg-cyan-400/10
+      hover:scale-[1.02]
+
+      active:scale-[0.97]
+
+      transition-all duration-200
+    "
               >
-                Withdraw
+                <span className="relative z-10">
+                  Withdraw
+                </span>
+
+                <div
+                  className="
+        absolute inset-0
+        opacity-0 group-hover:opacity-100
+        transition
+        bg-cyan-400/5
+      "
+                />
               </button>
+
             </div>
           </div>
         </div>
