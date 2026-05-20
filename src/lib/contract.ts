@@ -336,4 +336,33 @@ export function formatToken(amount: bigint): string {
   }
 }
 
+export async function getVaultContractWithSigner() {
+  const eth = getEthereum();
+  if (!eth) throw new Error("Wallet not found");
 
+  const provider = new BrowserProvider(eth);
+  const signer = await provider.getSigner();
+
+  const contract = new Contract(
+    CELODAILY_VAULT_CONTRACT,
+    CELODAILY_VAULT_ABI,
+    signer
+  );
+
+  return { provider, signer, contract };
+}
+
+export async function getVaultReadOnlyContract() {
+  const eth = getEthereum();
+  if (!eth) throw new Error("Wallet not found");
+
+  const provider = new BrowserProvider(eth);
+
+  const contract = new Contract(
+    CELODAILY_VAULT_CONTRACT,
+    CELODAILY_VAULT_ABI,
+    provider
+  );
+
+  return { provider, contract };
+}
