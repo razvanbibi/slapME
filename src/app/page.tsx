@@ -2298,6 +2298,19 @@ export default function HomePage() {
   "
           >
 
+            {/* ambient glow */}
+            <div
+              className="
+    absolute
+    -top-24 left-1/2 -translate-x-1/2
+    h-48 w-48
+    rounded-full
+    bg-cyan-400/10
+    blur-3xl
+    pointer-events-none
+  "
+            />
+
             <div className="flex items-center justify-between">
               <h2 className="text-lg font-semibold text-white">
                 Vault
