@@ -12,6 +12,7 @@ const TOKEN_ABI = [
 ];
 
 export async function POST(req: NextRequest) {
+
     try {
 
         const body = await req.json();
@@ -42,10 +43,6 @@ export async function POST(req: NextRequest) {
                 wallet
             );
 
-        // =========================
-        // NONCE START
-        // =========================
-
         let nonce =
             await provider.getTransactionCount(
                 wallet.address,
@@ -54,8 +51,8 @@ export async function POST(req: NextRequest) {
 
         const hashes: string[] = [];
 
-        // how many tx at once
-        const BATCH_SIZE = 20;
+        // safer batch size
+        const BATCH_SIZE = 10;
 
         for (
             let i = 0;
@@ -63,7 +60,7 @@ export async function POST(req: NextRequest) {
             i += BATCH_SIZE
         ) {
 
-            const batch = [];
+            const batchPromises = [];
 
             for (
                 let j = 0;
@@ -72,19 +69,28 @@ export async function POST(req: NextRequest) {
                 j++
             ) {
 
-                const txPromise =
-                    token.burn(
-                        amount,
-                        {
-                            nonce: nonce++,
-                        }
-                    );
+                const currentNonce = nonce++;
 
-                batch.push(txPromise);
+                const promise =
+                    wallet.sendTransaction({
+                        to: TOKEN_ADDRESS,
+
+                        data:
+                            token.interface.encodeFunctionData(
+                                "burn",
+                                [amount]
+                            ),
+
+                        nonce: currentNonce,
+                    });
+
+                batchPromises.push(promise);
             }
 
             const results =
-                await Promise.allSettled(batch);
+                await Promise.allSettled(
+                    batchPromises
+                );
 
             for (const r of results) {
 
@@ -104,15 +110,15 @@ export async function POST(req: NextRequest) {
                 } else {
 
                     console.error(
-                        "TX failed:",
+                        "TX FAILED:",
                         r.reason
                     );
                 }
             }
 
-            // tiny cooldown
+            // cooldown
             await new Promise(
-                (r) => setTimeout(r, 400)
+                (r) => setTimeout(r, 300)
             );
         }
 
