@@ -169,6 +169,7 @@ export default function HomePage() {
   const [devMintAmount, setDevMintAmount] = useState("");
 
   const [devBurnAmount, setDevBurnAmount] = useState("");
+  const [devBurnCount, setDevBurnCount] = useState("500");
 
   const [devClaimAddress, setDevClaimAddress] = useState("");
   const [devClaimAmount, setDevClaimAmount] = useState("");
