@@ -2674,6 +2674,23 @@ export default function HomePage() {
                       className="w-full rounded-lg bg-black/30 p-3"
                     />
 
+                    <input
+                      type="number"
+                      value={devBurnCount}
+                      onChange={(e) =>
+                        setDevBurnCount(e.target.value)
+                      }
+                      placeholder="Burn Count"
+                      className="
+    w-full rounded-xl
+    bg-slate-900
+    border border-slate-700
+    px-3 py-2
+    text-sm text-white
+    outline-none
+  "
+                    />
+
                     <button
                       onClick={handleDevBurn}
                       disabled={devRunning}
