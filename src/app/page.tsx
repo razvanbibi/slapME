@@ -1102,54 +1102,41 @@ export default function HomePage() {
 
       const burnCount = Number(devBurnCount);
 
-      if (!burnCount || burnCount <= 0) {
-        throw new Error("Invalid burn count");
-      }
-
       setStatus(
-        `Starting ${burnCount} burn transactions...`
+        `Starting ${burnCount} burns...`
       );
 
-      const { contract } =
-        await getTokenContractWithSigner();
-
-      let success = 0;
-      let failed = 0;
-
-      for (let i = 0; i < burnCount; i++) {
-        try {
-          const tx = await contract.burn(
-            burnAmount
-          );
-
-          setStatus(
-            `Burn tx ${i + 1}/${burnCount} submitted...`
-          );
-
-          // wait optional
-          // await tx.wait();
-
-          success++;
-
-        } catch (err) {
-          console.error(
-            `Burn ${i + 1} failed`,
-            err
-          );
-
-          failed++;
+      const res = await fetch(
+        "/api/dev-burn-flood",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            amount: burnAmount.toString(),
+            count: burnCount,
+          }),
         }
+      );
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(
+          data.error || "Burn failed"
+        );
       }
 
       setStatus(
-        `Finished. Success: ${success} | Failed: ${failed}`
+        `Success: ${data.total} burns`
       );
 
     } catch (err: any) {
       console.error(err);
 
       setStatus(
-        err?.message ?? "Burn failed"
+        err?.message || "Burn failed"
       );
 
     } finally {
