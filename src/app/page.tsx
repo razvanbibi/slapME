@@ -2580,47 +2580,98 @@ export default function HomePage() {
             </div>
 
             {/* Buttons */}
-            <div className="mt-5 grid grid-cols-2 gap-4">
+            <div className="mt-6">
 
-              {/* Deposit */}
-              <button
-                onClick={handleVaultDeposit}
-                className="
-            relative overflow-hidden
-            rounded-2xl
-            bg-gradient-to-r
-            from-emerald-400
-            to-cyan-400
-            py-4
-            text-lg
-            font-black
-            text-slate-950
-            shadow-[0_0_30px_rgba(0,255,180,0.3)]
-            transition-all
-            hover:scale-[1.02]
-          "
-              >
-                Deposit
-              </button>
+              <div className="grid grid-cols-2 gap-3">
 
-              {/* Withdraw */}
-              <button
-                onClick={handleVaultWithdraw}
+                {/* Deposit */}
+                <button
+                  onClick={handleVaultDeposit}
+                  className="
+        flex items-center justify-center gap-2
+        rounded-2xl
+        bg-[#f5c842]
+        py-4
+        text-[17px]
+        font-black
+        text-black
+        shadow-[0_8px_30px_rgba(245,200,66,0.28)]
+        transition-all
+        hover:scale-[1.02]
+      "
+                >
+                  <span className="text-lg">
+                    ↓
+                  </span>
+
+                  Deposit
+                </button>
+
+                {/* Withdraw */}
+                <button
+                  onClick={handleVaultWithdraw}
+                  className="
+        flex items-center justify-center gap-2
+        rounded-2xl
+        border border-white/10
+        bg-[#111827]
+        py-4
+        text-[17px]
+        font-black
+        text-white
+        transition-all
+        hover:bg-[#182033]
+      "
+                >
+                  <span className="text-lg text-yellow-300">
+                    ↑
+                  </span>
+
+                  Withdraw
+                </button>
+
+              </div>
+
+              {/* Bottom Text */}
+              <div
                 className="
-            rounded-2xl
-            border
-            border-cyan-400/20
-            bg-cyan-400/5
-            py-4
-            text-lg
-            font-black
-            text-cyan-300
-            transition-all
-            hover:bg-cyan-400/10
-          "
+    mt-4
+    flex items-center justify-center gap-2
+    text-sm
+    text-slate-400
+  "
               >
-                Withdraw
-              </button>
+
+                {/* Shield Icon */}
+                <div
+                  className="
+      flex h-5 w-5 items-center justify-center
+      rounded-full
+      bg-[#0b1733]
+      border border-blue-500/20
+      shadow-[0_0_12px_rgba(59,130,246,0.18)]
+    "
+                >
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.4"
+                    className="h-3 w-3 text-blue-400"
+                  >
+                    <path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3z" />
+                    <path d="M9 12l2 2 4-4" />
+                  </svg>
+
+                </div>
+
+                <span className="font-medium">
+                  Your assets. Your control.
+                </span>
+
+              </div>
 
             </div>
           </div>
