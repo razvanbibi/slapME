@@ -1917,32 +1917,44 @@ export default function HomePage() {
                 {/* ✅ Identity button — ALWAYS LIVE */}
                 <button
                   onClick={() => setShowMintIdentity(true)}
-                  className="
+                  className={`
   group
   relative
   isolate
   overflow-hidden
   rounded-2xl
 
-  border border-white/15
-  bg-[linear-gradient(135deg,rgba(255,255,255,0.22),rgba(255,255,255,0.04))]
-  
+  border
   px-3 py-1.5
 
   text-[11px]
   font-semibold
   tracking-[0.18em]
   uppercase
-    text-slate-950
 
   backdrop-blur-3xl
-  shadow-[0_10px_30px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.18)]
-
   transition-all
   duration-500
   hover:scale-[1.03]
-  hover:border-white/30
-  hover:shadow-[0_15px_45px_rgba(0,0,0,0.55),0_0_25px_rgba(255,255,255,0.12)]
+
+  ${isDarkMode
+                      ? `
+        border-white/15
+        bg-[linear-gradient(135deg,rgba(255,255,255,0.22),rgba(255,255,255,0.04))]
+        text-slate-400
+        shadow-[0_10px_30px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.18)]
+        hover:border-white/30
+        hover:shadow-[0_15px_45px_rgba(0,0,0,0.55),0_0_25px_rgba(255,255,255,0.12)]
+      `
+                      : `
+        border-sky-300/40
+        bg-[linear-gradient(135deg,rgba(255,255,255,0.95),rgba(230,240,255,0.72))]
+        text-slate-800
+        shadow-[0_10px_30px_rgba(56,189,248,0.18),inset_0_1px_0_rgba(255,255,255,0.9)]
+        hover:border-sky-400/60
+        hover:shadow-[0_15px_45px_rgba(56,189,248,0.28)]
+      `
+                    }
 
   before:absolute
   before:inset-0
@@ -1960,7 +1972,7 @@ export default function HomePage() {
 
   [&>span]:relative
   [&>span]:z-10
-"
+`}
                 >
                   {hasIdentityNFT ? "View Identity" : "Mint Identity"}
                 </button>
