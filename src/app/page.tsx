@@ -2508,27 +2508,21 @@ export default function HomePage() {
             </div>
 
             {/* User Balance */}
-            <div
-              className="
-          mt-4
-          rounded-2xl
-          border border-cyan-400/10
-          bg-cyan-400/5
-          p-4
-        "
-            >
+            <div className="mt-4">
 
-              <p className="text-sm text-cyan-200/70">
+              <p className="text-sm text-slate-400">
                 Your Vault Balance
               </p>
 
               <h3
                 className="
-            mt-1
-            text-2xl
-            font-bold
-            text-cyan-300
-          "
+      mt-1
+      text-[21px]
+      leading-none
+      font-black
+      tracking-tight
+      text-white
+    "
               >
                 {userVaultBalance} USDm
               </h3>
@@ -2536,29 +2530,52 @@ export default function HomePage() {
             </div>
 
             {/* Input */}
-            <div className="mt-4">
+            <div className="mt-5">
 
-              <input
-                type="number"
-                value={vaultAmount}
-                onChange={(e) => setVaultAmount(e.target.value)}
-                placeholder="Enter USDm amount"
+              <div
                 className="
-            w-full
-            rounded-2xl
-            border
-            border-white/10
-            bg-white/[0.04]
-            px-5
-            py-4
-            text-lg
-            font-medium
-            text-white
-            outline-none
-            placeholder:text-slate-500
-            focus:border-cyan-400/40
-          "
-              />
+      flex items-center
+      rounded-[22px]
+      border border-white/10
+      bg-[#0b1225]
+      px-5
+      py-4
+    "
+              >
+
+                <input
+                  type="number"
+                  value={vaultAmount}
+                  onChange={(e) => setVaultAmount(e.target.value)}
+                  placeholder="0"
+                  className="
+        w-full
+        bg-transparent
+        text-[24px]
+        font-bold
+        text-white
+        outline-none
+        placeholder:text-slate-500
+      "
+                />
+
+                <div
+                  className="
+        ml-3
+        flex items-center gap-1
+        text-sm
+        font-semibold
+        text-slate-300
+      "
+                >
+                  USDm
+
+                  <span className="text-slate-500">
+                    ▼
+                  </span>
+                </div>
+
+              </div>
 
             </div>
 
