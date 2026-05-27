@@ -2553,6 +2553,7 @@ export default function HomePage() {
 
                 <input
                   type="number"
+                   min="0"
                   value={vaultAmount}
                   onChange={(e) => setVaultAmount(e.target.value)}
                   placeholder="0"
