@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "@fontsource/geist";        // Regular Geist font
 import "@fontsource/geist-mono";   // Geist Mono font
 import "./globals.css";
-
 export const metadata: Metadata = {
   title: "CeloDaily",
   description: "Daily check-ins on Celo to grow your streak and earn rewards",
