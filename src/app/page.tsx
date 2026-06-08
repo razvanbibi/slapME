@@ -80,7 +80,6 @@ function AvatarBubbleStream({ avatar }: { avatar: string }) {
   );
 }
 
-
 export default function HomePage() {
   const [account, setAccount] = useState<string | null>(null);
   const [streak, setStreak] = useState<bigint | null>(null);
