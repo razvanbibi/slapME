@@ -260,7 +260,6 @@ export default function HomePage() {
     return `${hours}h ${minutes}m`;
   }
 
-
   function getStorageKey(acc: string) {
     return `celodaily:checkin:${acc.toLowerCase()}`;
   }
