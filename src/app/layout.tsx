@@ -12,7 +12,6 @@ export const metadata: Metadata = {
     images: ["/og-banner.png"],
   },
   other: {
-   
     "talentapp:project_verification":
   "f875fa7a1ea67452fbabe71721d26b614545ac878afe43a4c515c2de15ebead92a186fdcb478cf471873bad34d52b244c1e836e3b0aed2159bc272e9c33054a0",
 
