@@ -12,7 +12,6 @@ export async function saveStats(
   });
 }
 
-
 export async function saveProfile(
   address: string,
   data: { name: string | null; avatar: string | null;  }
