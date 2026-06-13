@@ -19,7 +19,6 @@ type Toast =
   | { type: "claim"; message: string }
   | { type: "donation"; message: string }
   | null;
-
 type Supporter = {
   address: string;
   total: number;
