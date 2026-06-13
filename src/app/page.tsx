@@ -28,7 +28,6 @@ type Supporter = {
 const USDM_TOKEN_ADDRESS = "0x765DE816845861e75A25fCA122bb6898B8B1282a";
 
 
-
 function AvatarBubbleStream({ avatar }: { avatar: string }) {
   const [bubbles, setBubbles] = useState<
     { id: number; left: number; size: number }[]
