@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "@fontsource/geist";        //Geist 
+import "@fontsource/geist";
 import "@fontsource/geist-mono";   // Geist Mono font
 import "./globals.css";
 export const metadata: Metadata = {
