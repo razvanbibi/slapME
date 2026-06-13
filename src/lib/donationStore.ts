@@ -10,7 +10,6 @@ export async function saveDonation(
     total
   );
 }
-
 export async function getDonation(
   address: string
 ) {
