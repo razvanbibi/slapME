@@ -41,7 +41,6 @@ function AvatarBubbleStream({ avatar }: { avatar: string }) {
         },
       ]);
     }, 1200);
-
     return () => clearInterval(interval);
   }, []);
 
