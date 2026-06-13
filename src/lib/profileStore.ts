@@ -26,7 +26,6 @@ export async function getProfile(address: string) {
   }>(KEY_PREFIX + address.toLowerCase());
 
   if (!res) return null;
-
   return {
     name: res.name ?? null,
     avatar: res.avatar ?? null,
@@ -42,7 +41,6 @@ export async function getProfiles(addresses: string[]) {
     addresses.map(async (address) => {
 
       const profile = await getProfile(address);
-
       return {
         address: address.toLowerCase(),
         ...profile,
