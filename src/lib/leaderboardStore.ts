@@ -11,7 +11,6 @@ export async function addAddress(addr: string) {
   if (!addr) return;
   await redis.sadd(KEY, addr.toLowerCase());
 }
-
 export async function getAllAddresses(): Promise<string[]> {
   const res = await redis.smembers(KEY);
 return res ?? [];
