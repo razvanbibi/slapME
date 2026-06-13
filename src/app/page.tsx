@@ -93,9 +93,7 @@ export default function HomePage() {
   const [showDonate, setShowDonate] = useState(false);
   const [showVault, setShowVault] = useState(false);
   const [vaultAmount, setVaultAmount] = useState("1");
-
   const [vaultBalance, setVaultBalance] = useState("0");
-
   const [userVaultBalance, setUserVaultBalance] = useState("0");
 
   const [donationAmount, setDonationAmount] = useState<string>("1");
