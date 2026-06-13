@@ -99,7 +99,6 @@ export default function HomePage() {
   const [userVaultBalance, setUserVaultBalance] = useState("0");
 
   const [donationAmount, setDonationAmount] = useState<string>("1");
-
   const [profileName, setProfileName] = useState<string>("");
   const [profileAvatar, setProfileAvatar] = useState<string>("/avatar.png");
 
