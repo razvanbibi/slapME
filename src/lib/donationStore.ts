@@ -13,7 +13,6 @@ export async function saveDonation(
 export async function getDonation(
   address: string
 ) {
-
   return await redis.get<number>(
     KEY_PREFIX + address.toLowerCase()
   );
