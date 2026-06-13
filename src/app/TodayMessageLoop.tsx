@@ -36,7 +36,6 @@ export default function TodayMessageLoop({ isDarkMode, account }: Props) {
       hero: false,
     },
   ];
-
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(true);
 
