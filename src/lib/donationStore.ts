@@ -5,7 +5,6 @@ export async function saveDonation(
   address: string,
   total: number
 ) {
-
   await redis.set(
     KEY_PREFIX + address.toLowerCase(),
     total
