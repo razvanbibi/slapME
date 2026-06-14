@@ -102,7 +102,7 @@ export default function HomePage() {
   const [topSupporters, setTopSupporters] = useState<Supporter[]>([]);
   const [taglineAnim, setTaglineAnim] = useState(true);
   const [showOnboarding, setShowOnboarding] = useState(false);
-  // Theme (day / night)
+  // Theme 
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [showBadgeInfo, setShowBadgeInfo] = useState(false);
   const [flashGlow, setFlashGlow] = useState(false);
