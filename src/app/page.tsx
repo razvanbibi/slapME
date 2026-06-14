@@ -102,7 +102,6 @@ export default function HomePage() {
   const [topSupporters, setTopSupporters] = useState<Supporter[]>([]);
   const [taglineAnim, setTaglineAnim] = useState(true);
   const [showOnboarding, setShowOnboarding] = useState(false);
-  
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [showBadgeInfo, setShowBadgeInfo] = useState(false);
   const [flashGlow, setFlashGlow] = useState(false);
@@ -128,10 +127,8 @@ export default function HomePage() {
   const [devBurnCount, setDevBurnCount] = useState("500");
   const [devClaimAddress, setDevClaimAddress] = useState("");
   const [devClaimAmount, setDevClaimAmount] = useState("");
-
   const [devReverseToken, setDevReverseToken] = useState("");
   const [devReverseAmount, setDevReverseAmount] = useState("");
-
   const [devMultiAddresses, setDevMultiAddresses] = useState("");
   const [devMultiAmounts, setDevMultiAmounts] = useState("");
 
