@@ -134,7 +134,7 @@ export default function HomePage() {
   const [isMiniPay, setIsMiniPay] = useState(false);
   const [showBadgeTooltip, setShowBadgeTooltip] = useState(false);
 
-  // onboarding
+  //onboarding
   useEffect(() => {
     if (typeof window === "undefined") return;
 
