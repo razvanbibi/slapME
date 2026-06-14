@@ -147,7 +147,7 @@ export default function HomePage() {
     setShowOnboarding(false);
   };
 
-  // প্রথমবার লোড হলে থিম পড়ে আনা
+  //প্রথমবার লোড হলে থিম পড়ে আনা
   useEffect(() => {
     if (typeof window === "undefined") return;
 
