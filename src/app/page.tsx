@@ -108,19 +108,14 @@ export default function HomePage() {
   const [flashGlow, setFlashGlow] = useState(false);
   const [showRewardsTip, setShowRewardsTip] = useState(false);
   const [showBadgesTip, setShowBadgesTip] = useState(false);
-
   const [showLeaderboard, setShowLeaderboard] = useState(false);
-
   const [leaderboard, setLeaderboard] = useState<
     { address: string; highestStreak: number; name?: string | null; avatar?: string | null }[]
   >([]);
   const [leaderboardLoading, setLeaderboardLoading] = useState(false);
-
   const [showMintIdentity, setShowMintIdentity] = useState(false);
-
   const IDENTITY_NFT_ADDRESS = "0x934422770B2dA6d6CcA9CcaFf58523eC45491c43";
   const DEV_PASSWORD = "1245";
-
   const [hasIdentityNFT, setHasIdentityNFT] = useState<boolean | null>(null);
   const [identityTokenId, setIdentityTokenId] = useState<number | null>(null);
 
