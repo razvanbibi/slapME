@@ -124,7 +124,6 @@ const logoBase64 = await fetchAsBase64(
     text-anchor="end">
     ${highestStreak}
   </text>
-
   <text x="520" y="186"
   fill="#38bdf8"
   font-size="15"
