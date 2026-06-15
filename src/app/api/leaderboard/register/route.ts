@@ -7,7 +7,7 @@ export async function POST(req: Request) {
   if (!address) {
     return NextResponse.json({ ok: false }, { status: 400 });
   }
-  //  address
+  // 
   await addAddress(address);
   // after addAddress(address)
 const { contract } = getReadOnlyContractServer();
