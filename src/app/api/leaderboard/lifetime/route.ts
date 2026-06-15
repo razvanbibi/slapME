@@ -13,7 +13,6 @@ export async function GET() {
   const rows = await Promise.all(
     visibleAddresses.map(async (addr) => {
       const profile = await getProfile(addr);
-
       return {
         address: addr,
         highestStreak: profile?.highestStreak ?? 0,
