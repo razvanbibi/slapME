@@ -7,7 +7,6 @@ export async function POST(req: Request) {
   if (!address) {
     return NextResponse.json({ ok: false }, { status: 400 });
   }
-
   // 1️⃣ address register
   await addAddress(address);
   // after addAddress(address)
