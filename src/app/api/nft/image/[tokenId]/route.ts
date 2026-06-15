@@ -91,7 +91,6 @@ const logoBase64 = await fetchAsBase64(
   width="48" height="48"
   clip-path="url(#avatarClip)"/>
 
-
   <!-- name -->
   <text x="132" y="66"
     fill="#e5e7eb"
