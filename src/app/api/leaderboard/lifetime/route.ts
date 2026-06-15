@@ -10,7 +10,6 @@ export async function GET() {
   const visibleAddresses = addresses.filter(
   (addr) => !HIDDEN_ADDRESSES.has(addr.toLowerCase())
 );
-
   const rows = await Promise.all(
     visibleAddresses.map(async (addr) => {
       const profile = await getProfile(addr);
