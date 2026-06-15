@@ -3,7 +3,6 @@ import { addAddress } from "@/lib/leaderboardStore";
 import { saveStats } from "@/lib/profileStore";
 import { getReadOnlyContractServer } from "@/lib/contract.server";
 
-
 export async function POST(req: Request) {
   const { address } = await req.json();
   if (!address) {
