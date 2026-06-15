@@ -19,6 +19,5 @@ await saveStats(address, {
 });
 
 
-
   return NextResponse.json({ ok: true });
 }
