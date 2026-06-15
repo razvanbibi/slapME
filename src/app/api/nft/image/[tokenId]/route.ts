@@ -36,7 +36,6 @@ const logoBase64 = await fetchAsBase64(
   "https://celo-daily.vercel.app/logo-0x.png"
 );
 
-
   const svg = `
 <svg width="600" height="360" viewBox="0 0 600 360"
   xmlns="http://www.w3.org/2000/svg"
