@@ -146,7 +146,6 @@ const logoBase64 = await fetchAsBase64(
 
 </svg>
 `;
-
 return new Response(svg, {
   headers: {
     "Content-Type": "image/svg+xml; charset=utf-8",
