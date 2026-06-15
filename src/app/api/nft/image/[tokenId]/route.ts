@@ -143,7 +143,6 @@ const logoBase64 = await fetchAsBase64(
   x="-28" y="-8"
   width="16" height="16"/>
 
-
   <text x="0" y="4"
     fill="#94a3b8"
     font-size="10"
