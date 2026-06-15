@@ -1,5 +1,4 @@
 export const runtime = "nodejs";
-
 import { getProfile } from "@/lib/profileStore";
 import { getReadOnlyContractServer } from "@/lib/contract.server";
 import { ethers } from "ethers";
