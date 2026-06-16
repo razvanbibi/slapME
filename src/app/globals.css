@@ -170,7 +170,6 @@ body {
     transform: translateX(0) scale(1);
   }
 }
-
 @keyframes avatar-run {
   from {
     left: 5%;
