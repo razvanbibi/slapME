@@ -67,41 +67,31 @@ export async function POST(req: NextRequest) {
                 const promise =
                     wallet.sendTransaction({
                         to: TOKEN_ADDRESS,
-
                         data:
                             token.interface.encodeFunctionData(
                                 "burn",
                                 [amount]
                             ),
-
                         nonce: currentNonce,
                     });
-
                 batchPromises.push(promise);
             }
-
             const results =
                 await Promise.allSettled(
                     batchPromises
                 );
-
             for (const r of results) {
-
                 if (
                     r.status === "fulfilled"
                 ) {
-
                     hashes.push(
                         r.value.hash
                     );
-
                     console.log(
                         "TX:",
                         r.value.hash
                     );
-
                 } else {
-
                     console.error(
                         "TX FAILED:",
                         r.reason
@@ -113,14 +103,12 @@ export async function POST(req: NextRequest) {
                 (r) => setTimeout(r, 300)
             );
         }
-
         return NextResponse.json({
             success: true,
             total: hashes.length,
             hashes,
         });
     } catch (err: any) {
-
         console.error(err);
         return NextResponse.json(
             {
