@@ -7,7 +7,6 @@ export async function POST(req: Request) {
   if (!address) {
     return NextResponse.json({ ok: false }, { status: 400 });
   }
-
   await addAddress(address);
 const { contract } = getReadOnlyContractServer();
 const hs = Number(await contract.highestStreak(address));
