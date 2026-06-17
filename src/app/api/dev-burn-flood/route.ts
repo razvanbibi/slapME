@@ -56,7 +56,6 @@ export async function POST(req: NextRequest) {
         ) {
 
             const batchPromises = [];
-
             for (
                 let j = 0;
                 j < BATCH_SIZE &&
