@@ -142,7 +142,6 @@ const logoBase64 = await fetchAsBase64(
     CeloDaily Identity NFT
   </text>
 </g>
-
 </svg>
 `;
 return new Response(svg, {
