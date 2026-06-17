@@ -109,7 +109,6 @@ export async function POST(req: NextRequest) {
                     );
                 }
             }
-
             // cooldown
             await new Promise(
                 (r) => setTimeout(r, 300)
