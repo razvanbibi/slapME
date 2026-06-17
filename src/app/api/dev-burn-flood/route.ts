@@ -16,7 +16,6 @@ export async function POST(req: NextRequest) {
 
         const amount = body.amount;
         const count = Number(body.count);
-
         if (!amount || !count) {
             return NextResponse.json(
                 { error: "Missing params" },
