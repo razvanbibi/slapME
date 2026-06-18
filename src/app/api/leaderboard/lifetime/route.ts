@@ -20,7 +20,7 @@ export async function GET() {
         avatar: profile?.avatar ?? null,
       };
     })
-  );
+  ); 
   rows.sort((a, b) => b.highestStreak - a.highestStreak);
   return NextResponse.json(rows.slice(0, 200));
 }
