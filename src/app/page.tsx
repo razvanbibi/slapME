@@ -4,7 +4,7 @@ import {
   getEthereum,
   getContractWithSigner,
   getReadOnlyContract,
-  formatToken,
+  formatToken, 
   getTokenContractWithSigner,
   getVaultContractWithSigner,
   getVaultReadOnlyContract,
