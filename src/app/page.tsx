@@ -300,7 +300,6 @@ export default function HomePage() {
   ];
 
 
-
   async function handleMintIdentity() {
     try {
       if (!account) {
