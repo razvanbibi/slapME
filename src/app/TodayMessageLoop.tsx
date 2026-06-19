@@ -5,7 +5,7 @@ type Props = {
 };
 export default function TodayMessageLoop({ isDarkMode, account }: Props) {
   const slides = [
-    {
+    { 
       duration: 4000,
       first: (
         <>
