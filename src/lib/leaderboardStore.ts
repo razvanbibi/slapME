@@ -9,4 +9,4 @@ export async function addAddress(addr: string) {
 export async function getAllAddresses(): Promise<string[]> {
   const res = await redis.smembers(KEY);
 return res ?? [];
-}
+} 
