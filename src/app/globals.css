@@ -139,7 +139,6 @@ body {
     letter-spacing: 0.08em;
     opacity: 0.6;
   }
-
   50% {
     transform: scale(1.08);
     letter-spacing: 0.14em;
@@ -169,14 +168,12 @@ body {
     transform: translateX(-50%) translateY(-6px) scale(1);
     opacity: 1;
   }
-
   to {
     left: var(--target-x);
     transform: translateX(-50%) translateY(0) scale(1);
     opacity: 1;
   }
 }
-
 @keyframes avatar-fade {
   from {
     opacity: 1;
@@ -206,7 +203,6 @@ body {
 .leg-left {
   animation: leg-run 0.2s infinite alternate;
 }
-
 .leg-right {
   animation: leg-run 0.2s infinite alternate-reverse;
 }
@@ -214,12 +210,10 @@ body {
   from {
     transform: translateY(0);
   }
-
   to {
     transform: translateY(4px);
   }
 }
-
 @keyframes breath {
 
   0%,
@@ -278,7 +272,6 @@ body {
   position: absolute;
   inset: 0;
   pointer-events: none;
-
   background-image:
     /* MAIN FLOW LINES */
     repeating-linear-gradient(135deg,
@@ -286,17 +279,14 @@ body {
       rgba(15, 23, 42, 0.18) 1px,
       transparent 1px,
       transparent 140px),
-
     /* SECONDARY SOFT LINES */
     repeating-linear-gradient(135deg,
       rgba(15, 23, 42, 0.08) 0px,
       rgba(15, 23, 42, 0.08) 1px,
       transparent 1px,
       transparent 70px);
-
   opacity: 0.75;
 }
-
 /* BaseDaily — Drawer Day Mode Background */
 .basedaily-drawer-day {
   background-color: #ffffff;
@@ -311,13 +301,11 @@ body {
       transparent 1px,
       transparent 36px);
 }
-
 @keyframes avatar-float {
   0% {
     transform: translateY(0) scale(0.9);
     opacity: 0.9;
   }
-
   30% {
     opacity: 1;
   }
@@ -326,17 +314,14 @@ body {
     opacity: 0;
   }
 }
-
 .animate-avatar-float {
   animation-name: avatar-float;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 }
-
 .you-row-highlight {
   position: relative;
 }
-
 .you-row-highlight::before {
   content: "";
   position: absolute;
