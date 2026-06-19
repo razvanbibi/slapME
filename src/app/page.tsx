@@ -2255,7 +2255,7 @@ export default function HomePage() {
             }`}
         >
           <span className={isDarkMode ? "" : "text-slate-900"}>
-            Built on Celo 💛
+            Built on Celo 
           </span>
 
           <a
