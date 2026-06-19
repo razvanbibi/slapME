@@ -673,7 +673,6 @@ export default function HomePage() {
         );
       }
 
-
       triggerAvatarRun(badgeProgress);
 
 
