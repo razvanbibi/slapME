@@ -135,7 +135,6 @@ export default function HomePage() {
   const [showBadgeTooltip, setShowBadgeTooltip] = useState(false);
   useEffect(() => {
     if (typeof window === "undefined") return;
-
     const seen = window.localStorage.getItem("celodaily_onboarding_v1");
     if (!seen) {
       setShowOnboarding(true);
