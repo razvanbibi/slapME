@@ -3171,7 +3171,6 @@ export default function HomePage() {
                     Badges
                   </p>
                 </button>
-
                 {showBadgeInfo && (
                   <div
                     className="
@@ -3193,8 +3192,7 @@ export default function HomePage() {
                   </div>
                 )}
               </div>
-
-              {/* 💰 0xtxn */}
+              {/* 💰 0xtxn */} 
               <div>
                 <p className="text-lg">💰</p>
                 <p
