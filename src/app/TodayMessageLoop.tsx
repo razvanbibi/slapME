@@ -44,7 +44,7 @@ export default function TodayMessageLoop({ isDarkMode, account }: Props) {
     setTimeout(() => {
       setIndex((i) => (i + 1) % slides.length);
       setVisible(true);
-    }, 300); // fade dura
+    }, 300); // fade
   }, current.duration);
   return () => clearTimeout(timer);
 }, [index, slides]);
