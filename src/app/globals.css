@@ -214,7 +214,6 @@ body {
 .leg-right {
   animation: leg-run 0.2s infinite alternate-reverse;
 }
-
 @keyframes leg-run {
   from {
     transform: translateY(0);
