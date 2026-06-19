@@ -2781,9 +2781,7 @@ export default function HomePage() {
 
             {devUnlocked && (
               <div className="flex flex-col gap-2">
-
                 <div className="mt-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-
                   {/* MINT */}
                   <div className="border border-white/10 rounded-xl p-4 space-y-3">
                     <h3 className="font-bold text-lg">Mint Tokens</h3>
