@@ -274,7 +274,6 @@ body {
       rgba(99, 102, 241, 0.22),
       transparent 60%);
 }
-
 /* DIAGONAL FLOW LINES (VISIBLE + NON-UNIFORM) */
 .basedaily-day-bg::after {
   content: "";
