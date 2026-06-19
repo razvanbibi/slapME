@@ -3466,14 +3466,12 @@ export default function HomePage() {
         w-24
         -translate-x-1/2
         rounded-full
-        bg-gradient-to-r from-transparent via-sky-400/60 to-transparent
+        bg-gradient-to-r from-transparent via-sky-400/60 to-transparent 
         blur-sm
       "
                 />
               )}
             </h3>
-
-
             {/* NFT preview card */}
             <div
               className="
