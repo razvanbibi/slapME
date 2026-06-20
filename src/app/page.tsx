@@ -227,11 +227,11 @@ export default function HomePage() {
       window.location.reload();
     };
 
-    eth.request({ method: "eth_accounts" }).then((accs: string[]) => {
+    eth.request({ method: "eth_accounts" }).then((accs: string[]) => { 
       if (accs.length > 0) setAccount(accs[0]);
     });
 
-    eth.on("accountsChanged", handleAccountsChanged);
+    eth.on("accountsChanged", handleAccountsChanged); 
     eth.on("chainChanged", handleChainChanged);
 
     return () => {
