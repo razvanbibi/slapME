@@ -261,8 +261,8 @@ export async function getContractWithSigner() {
     throw new Error("Please switch network to Celo mainnet");
   }
   const contract = new Contract(
-    OXTXN_STREAK_CONTRACT,
-    OXTXN_STREAK_ABI,
+    OXTXN_STREAK_CONTRACT, 
+    OXTXN_STREAK_ABI, 
     signer
   );
   return { provider, signer, contract };
