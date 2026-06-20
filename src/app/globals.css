@@ -40,13 +40,13 @@ body {
 @keyframes overlayFade { 
   0% {
     opacity: 0;
-    transform: scale(0.92); 
-    filter: blur(4px);
+    transform: scale(0.92);  
+    filter: blur(4px); 
   }
 
   60% {
     opacity: 1;
-    transform: scale(1.02);
+    transform: scale(1.02); 
     filter: blur(0px);
   }
 
@@ -58,11 +58,11 @@ body {
 
 /* ===== Header micro-animations ===== */
 
-@keyframes glow-pulse {
+@keyframes glow-pulse { 
 
   0%,
   100% {
-    box-shadow: 0 0 0 rgba(56, 189, 248, 0);
+    box-shadow: 0 0 0 rgba(56, 189, 248, 0); 
   }
 
   50% {
