@@ -14,9 +14,9 @@ export async function saveProfile(
   data: { name: string | null; avatar: string | null;  }
 ) {
   await redis.hset(KEY_PREFIX + address.toLowerCase(), {
-    name: data.name, 
+    name: data.name,  
     avatar: data.avatar,
-    })
+    }) 
   };
 export async function getProfile(address: string) {
   const res = await redis.hgetall<{
