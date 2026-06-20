@@ -231,8 +231,8 @@ export const CELODAILY_VAULT_ABI = [
     outputs: [],
   },
   {
-    type: "function",
-    name: "getUserBalance",
+    type: "function", 
+    name: "getUserBalance", 
     stateMutability: "view",
     inputs: [{ name: "user", type: "address" }],
     outputs: [{ name: "", type: "uint256" }],
@@ -240,13 +240,13 @@ export const CELODAILY_VAULT_ABI = [
   {
     type: "function",
     name: "getVaultBalance",
-    stateMutability: "view",
+    stateMutability: "view", 
     inputs: [],
     outputs: [{ name: "", type: "uint256" }],
   },
 ] as const;
 // MetaMask আছে কিনা চেক
-export function getEthereum() {
+export function getEthereum() { 
   if (typeof window === "undefined") return null;
   return (window as any).ethereum ?? null;
 }
