@@ -10,11 +10,11 @@ export async function saveStats(
   });
 }
 export async function saveProfile(
-  address: string,
+  address: string, 
   data: { name: string | null; avatar: string | null;  }
 ) {
   await redis.hset(KEY_PREFIX + address.toLowerCase(), {
-    name: data.name,
+    name: data.name, 
     avatar: data.avatar,
     })
   };
