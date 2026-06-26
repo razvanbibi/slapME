@@ -96,7 +96,7 @@ export default function Home() {
 
             {/* Right */}
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
 
               <div className="flex items-center gap-2 bg-slate-800 text-white rounded-lg px-3 py-2 text-sm font-medium">
                 <span>Stacks Testnet</span>
