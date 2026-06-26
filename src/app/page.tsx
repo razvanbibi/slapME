@@ -103,7 +103,7 @@ export default function Home() {
                 <span className="w-2 h-2 rounded-full bg-green-400"></span>
               </div>
 
-              <button className="bg-violet-600 hover:bg-violet-700 text-white rounded-xl px-6 py-3 ">
+              <button className="bg-violet-600 hover:bg-violet-700 text-white rounded-lg px-4 py-2 text-sm font-medium transition">
                 SP2F...G7P1
               </button>
 
