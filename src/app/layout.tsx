@@ -6,14 +6,14 @@ export const metadata: Metadata = {
   title: "SlapME",
   description: "", 
   openGraph: {
-    title: "CeloDaily",
+    title: "SlapME",
     description:
-      "Building a daily habit on Celo", 
-    images: ["/og-banner.png"],
+      "", 
+    images: ["/"],
   },
   other: {
     "talentapp:project_verification":
-  "f875fa7a1ea67452fbabe71721d26b614545ac878afe43a4c515c2de15ebead92a186fdcb478cf471873bad34d52b244c1e836e3b0aed2159bc272e9c33054a0", 
+  "4a6ed415e60ee14f974499200831b1ed71156561eab6b2eff7c7347b9298a212400d4d3ffe5e4a7fd3d6592bee3f855c783435d09fe22f19f455ed33471db21d",
   },
 };
 export default function RootLayout({
