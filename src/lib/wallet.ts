@@ -13,6 +13,7 @@ export function useWallet() {
     showConnect({
       appDetails: {
         name: "SlapMe",
+        icon: `${window.location.origin}/icon.png`,
       },
 
       onFinish: ({ userSession }) => {
