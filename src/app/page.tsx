@@ -7,6 +7,7 @@ import { useWallet } from "@/lib/wallet";
 
 
 export default function Home() {
+  const { wallet, setWallet } = useWallet();
   const [userSlaps] = useState(24);
   const [userPunches] = useState(17);
 
