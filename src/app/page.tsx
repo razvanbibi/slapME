@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useWallet } from "@/lib/wallet";
+import { slap } from "@/lib/transactions";
 
 
 
