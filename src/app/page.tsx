@@ -63,15 +63,25 @@ export default function Home() {
     }
   };
 
-  const handlePunch = () => {
+  const handlePunch = async () => {
     setAnimate(true);
 
     setTimeout(() => {
       setAnimate(false);
     }, 250);
 
-    console.log("PUNCH");
+    if (!wallet.connected) {
+      alert("Please connect your wallet first.");
+      return;
+    }
+
+    try {
+      await punch();
+    } catch (err) {
+      console.error(err);
+    }
   };
+
   return (
     <main className="grid-wrapper">
       <div className="grid-background" />
