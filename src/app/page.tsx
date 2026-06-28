@@ -107,7 +107,7 @@ export default function Home() {
 
               <button
                 onClick={connectWallet}
-                className="bg-violet-600 hover:bg-violet-700 text-white rounded-lg px-4 py-2 text-sm font-semibold"
+                className="cursor-pointer bg-violet-600 hover:bg-violet-700 text-white rounded-lg px-4 py-2 text-sm font-semibold"
               >
                 {wallet.connected
                   ? `${wallet.address.slice(0, 5)}...${wallet.address.slice(-4)}`

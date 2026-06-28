@@ -10,29 +10,35 @@ export function useWallet() {
   });
 
   const connectWallet = async () => {
-    showConnect({
-      appDetails: {
-        name: "SlapMe",
-        icon: `${window.location.origin}/icon.png`,
-      },
+    try {
+      await showConnect({
+        appDetails: {
+          name: "SlapMe",
+          icon: `${window.location.origin}/icon.png`,
+        },
 
-      onFinish: ({ userSession }) => {
-        const data = userSession.loadUserData();
+        onFinish: ({ userSession }) => {
+          console.log("Finished", userSession);
 
-        const address =
-          data.profile.stxAddress.mainnet ||
-          data.profile.stxAddress.testnet;
+          const data = userSession.loadUserData();
 
-        setWallet({
-          connected: true,
-          address,
-        });
-      },
+          const address =
+            data.profile.stxAddress.mainnet ||
+            data.profile.stxAddress.testnet;
 
-      onCancel: () => {
-        console.log("Wallet connection cancelled");
-      },
-    });
+          setWallet({
+            connected: true,
+            address,
+          });
+        },
+
+        onCancel: () => {
+          console.log("Cancelled");
+        },
+      });
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return {
