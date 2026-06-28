@@ -16,6 +16,11 @@
     "@fontsource/geist-mono": "^5.2.7",
     "@neynar/nodejs-sdk": "^3.137.0",
     "@resvg/resvg-js": "^2.6.2",
+    "@stacks/connect": "^8.2.6",
+    "@stacks/connect-ui": "^8.1.2",
+    "@stacks/network": "^7.5.0",
+    "@stacks/transactions": "^7.5.0",
+    "@stacks/wallet-sdk": "^7.5.0",
     "@upstash/redis": "^1.36.1",
     "@vercel/og": "^0.8.6",
     "ethers": "^6.15.0",
@@ -38,4 +43,3 @@
     "typescript": "^5"
   }
 }
- 

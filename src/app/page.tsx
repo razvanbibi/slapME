@@ -111,7 +111,7 @@ export default function Home() {
           </div>
 
         </header>
-
+ 
         {/* ================= PAGE ================= */}
 
         <section className="max-w-[1280px] mx-auto px-5 py-6">
