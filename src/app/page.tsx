@@ -44,14 +44,23 @@ export default function Home() {
 
   const [animate, setAnimate] = useState(false);
 
-  const handleSlap = () => {
+  const handleSlap = async () => {
     setAnimate(true);
 
     setTimeout(() => {
       setAnimate(false);
     }, 250);
 
-    console.log("SLAP");
+    if (!wallet.connected) {
+      alert("Please connect your wallet first.");
+      return;
+    }
+
+    try {
+      await slap();
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   const handlePunch = () => {
