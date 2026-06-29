@@ -325,7 +325,7 @@ export default function Home() {
                 </h3>
 
                 <p className="break-all text-slate-600">
-                  SP2F...G7P1
+                  SPTR...KM4J
                 </p>
 
               </div>
