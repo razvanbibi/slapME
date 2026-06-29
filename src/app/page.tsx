@@ -9,7 +9,19 @@ import {
   getGlobalStats,
 } from "@/lib/read";
 
+useEffect(() => {
 
+  async function load() {
+
+    const stats = await getGlobalStats();
+
+    console.log(stats);
+
+  }
+
+  load();
+
+}, []);
 
 export default function Home() {
   const { wallet, connectWallet } = useWallet();
