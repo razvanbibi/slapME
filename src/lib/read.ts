@@ -66,3 +66,22 @@ export async function getLastActivityId() {
 
     return cvToJSON(result);
 }
+
+export async function getActivity(id: number) {
+    const result = await fetchCallReadOnlyFunction({
+        network,
+
+        contractAddress: CONTRACT_ADDRESS,
+        contractName: CONTRACT_NAME,
+
+        functionName: "get-activity",
+
+        functionArgs: [
+            uintCV(id),
+        ],
+
+        senderAddress: CONTRACT_ADDRESS,
+    });
+
+    return cvToJSON(result);
+}
