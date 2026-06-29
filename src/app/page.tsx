@@ -15,8 +15,8 @@ import {
 
 export default function Home() {
   const { wallet, connectWallet } = useWallet();
-  const [userSlaps] = useState(24);
-  const [userPunches] = useState(17);
+  const [userSlaps, setUserSlaps] = useState(0);
+  const [userPunches, setUserPunches] = useState(0);
 
   const [globalSlaps, setGlobalSlaps] = useState(0);
   const [globalPunches, setGlobalPunches] = useState(0);
