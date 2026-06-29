@@ -34,6 +34,39 @@ export default function Home() {
         const last = await getLastActivityId();
 
         const lastId = Number(last.value);
+        const activities = [];
+        for (
+          let id = lastId;
+          id >= Math.max(1, lastId - 9);
+          id--
+        ) {
+
+          const activity = await getActivity(id);
+
+          console.log(activity);
+
+          const item = activity.value.value;
+
+          activities.push({
+
+            address: item.user.value,
+
+            action:
+              Number(item.action.value) === 1
+                ? "slap"
+                : Number(item.action.value) === 2
+                  ? "punch"
+                  : Number(item.action.value) === 3
+                    ? "patch"
+                    : "hospital",
+
+            block: "#" + item.block.value,
+
+          });
+          setRecentActivity(activities);
+        }
+        setRecentActivity(activities);
+        console.log(activities);
       } catch (err) {
         console.error("Read Error:", err);
       }
