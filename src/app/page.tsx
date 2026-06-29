@@ -416,7 +416,15 @@ export default function Home() {
                       <div className="flex items-center gap-3 w-[230px]">
 
                         <span className="text-xl">
-                          {item.action === "slap" ? "✋" : "👊"}
+                          {
+                            item.action === "slap"
+                              ? "✋"
+                              : item.action === "punch"
+                                ? "👊"
+                                : item.action === "patch"
+                                  ? "🩹"
+                                  : "🏥"
+                          }
                         </span>
 
                         <span className="font-medium text-sm">
@@ -433,8 +441,8 @@ export default function Home() {
 
                         <span
                           className={`font-semibold text-sm ${item.action === "slap"
-                              ? "text-red-500"
-                              : "text-violet-600"
+                            ? "text-red-500"
+                            : "text-violet-600"
                             }`}
                         >
                           {item.action}
