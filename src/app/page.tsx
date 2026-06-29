@@ -283,6 +283,42 @@ export default function Home() {
 
             <div className="space-y-4">
 
+              <div className="bg-white rounded-[15px] shadow-xl p-5">
+
+                <h2 className="text-[15px] font-black mb-5">
+                  📊 Your Stats
+                </h2>
+
+                <div className="space-y-3">
+
+                  <div className="rounded-xl border border-slate-200 p-3">
+
+                    <p className="text-slate-500 text-sm">
+                      ✋ Your Slaps
+                    </p>
+
+                    <p className="text-2xl font-black text-red-500 mt-1">
+                      {userSlaps}
+                    </p>
+
+                  </div>
+
+                  <div className="rounded-xl border border-slate-200 p-3">
+
+                    <p className="text-slate-500 text-sm">
+                      👊 Your Punches
+                    </p>
+
+                    <p className="text-2xl font-black text-violet-600 mt-1">
+                      {userPunches}
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
               <div className="bg-white rounded-[15px] shadow-xl p-7">
 
                 <h2 className="text-[15px] font-black mb-7">
