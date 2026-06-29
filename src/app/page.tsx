@@ -31,6 +31,9 @@ export default function Home() {
         setGlobalPunches(
           Number(stats.value.punches.value)
         );
+        const last = await getLastActivityId();
+
+        const lastId = Number(last.value);
       } catch (err) {
         console.error("Read Error:", err);
       }
@@ -39,32 +42,7 @@ export default function Home() {
     load();
   }, []);
 
-  const recentActivity = [
-    {
-      address: "SP3A...M1X9",
-      action: "slap",
-      block: "#12345678",
-      time: "2 mins ago",
-    },
-    {
-      address: "SP7B...Q2L8",
-      action: "punch",
-      block: "#12345660",
-      time: "5 mins ago",
-    },
-    {
-      address: "SP2F...G7P1",
-      action: "slap",
-      block: "#12345650",
-      time: "8 mins ago",
-    },
-    {
-      address: "SP9D...H3K7",
-      action: "punch",
-      block: "#12345640",
-      time: "12 mins ago",
-    },
-  ];
+  const [recentActivity, setRecentActivity] = useState<any[]>([]);
 
   const [animate, setAnimate] = useState(false);
 
