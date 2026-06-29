@@ -283,7 +283,7 @@ export default function Home() {
 
             <div className="space-y-4">
 
-              <div className="bg-white rounded-[15px] shadow-xl p-5">
+              <div className="bg-white rounded-[15px] shadow-xl px-5 py-4">
 
                 <h2 className="text-[15px] font-black mb-5">
                   📊 Your Stats
@@ -319,47 +319,47 @@ export default function Home() {
 
               </div>
 
-              <div className="bg-white rounded-[15px] shadow-xl p-7">
+              <div className="bg-white rounded-[15px] shadow-xl p-5">
 
-                <h2 className="text-[15px] font-black mb-7">
+                <h2 className="text-[15px] font-black mb-3">
                   🌍 Global Stats
                 </h2>
 
-                <div>
+                <div className="space-y-0.1">
 
-                  <p className="text-slate-500 text-lg">
+                  <p className="text-slate-500 text-sm">
                     Total Slaps (All Users)
                   </p>
 
-                  <p className="text-[14px] font-black text-red-500">
+                  <p className="text-lg font-black text-red-500">
                     {globalSlaps.toLocaleString()}
                   </p>
 
                 </div>
 
-                <hr className="my-6" />
+                <hr className="my-2" />
 
-                <div>
+                <div className="space-y-0.1">
 
-                  <p className="text-slate-500 text-lg">
+                  <p className="text-slate-500 text-sm">
                     Total Punches (All Users)
                   </p>
 
-                  <p className="text-[14px] font-black text-violet-600">
+                  <p className="text-lg font-black text-violet-600">
                     {globalPunches.toLocaleString()}
                   </p>
 
                 </div>
 
-                <hr className="my-6" />
+                <hr className="my-2" />
 
-                <div>
+                <div className="space-y-0.1">
 
-                  <p className="text-slate-500 text-lg">
+                  <p className="text-slate-500 text-sm">
                     Total Interactions
                   </p>
 
-                  <p className="text-[14px] font-black text-slate-800">
+                  <p className="text-lg font-black text-slate-800">
                     {(globalSlaps + globalPunches).toLocaleString()}
                   </p>
 
@@ -367,9 +367,9 @@ export default function Home() {
 
               </div>
 
-              <div className="bg-white rounded-[16px] shadow-lg px-6 py-4">
+              <div className="bg-white rounded-[16px] shadow-lg px-4 py-2.5">
 
-                <h3 className="text-[14px] font-bold mb-4">
+                <h3 className="text-[14px] font-bold mb-1">
                   📄 Contract
                 </h3>
 
