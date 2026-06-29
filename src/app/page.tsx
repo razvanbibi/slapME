@@ -408,32 +408,53 @@ export default function Home() {
 
                     <div
                       key={index}
-                      className="flex items-center justify-between rounded-xl border border-slate-200 px-3 py-1.5"
+                      className="flex items-center justify-between border-b border-slate-200 py-3 last:border-0"
                     >
 
-                      <div>
+                      {/* Address */}
 
-                        <p className="font-semibold text-[15px]">
-                          {item.address}
-                        </p>
+                      <div className="flex items-center gap-3 w-[230px]">
 
-                        <p className="text-[11px] text-slate-500">
-                          {item.block}
-                        </p>
+                        <span className="text-xl">
+                          {item.action === "slap" ? "✋" : "👊"}
+                        </span>
+
+                        <span className="font-medium text-sm">
+
+                          {`${item.address.slice(0, 5)}...${item.address.slice(-4)}`}
+
+                        </span>
 
                       </div>
 
-                      <div className="text-center">
+                      {/* Action */}
 
-                        <p className="font-semibold text-[15px]">
-                          {item.action === "slap"
-                            ? "✋ Slap"
-                            : "👊 Punch"}
-                        </p>
+                      <div className="w-[80px] text-center">
 
-                        <p className="text-[11px] text-slate-500">
-                          {item.time}
-                        </p>
+                        <span
+                          className={`font-semibold text-sm ${item.action === "slap"
+                              ? "text-red-500"
+                              : "text-violet-600"
+                            }`}
+                        >
+                          {item.action}
+                        </span>
+
+                      </div>
+
+                      {/* Block */}
+
+                      <div className="w-[150px] text-center text-sm text-slate-500">
+
+                        Block {item.block}
+
+                      </div>
+
+                      {/* Time */}
+
+                      <div className="w-[90px] text-right text-sm text-slate-400">
+
+                        On-chain
 
                       </div>
 
