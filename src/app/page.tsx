@@ -57,10 +57,12 @@ export default function Home() {
     }
 
     try {
-      await slap();
-    } catch (err) {
-      console.error(err);
-    }
+  console.log("Before slap()");
+  await slap();
+  console.log("After slap()");
+} catch (err) {
+  console.error("SLAP ERROR:", err);
+}
   };
 
   const handlePunch = async () => {

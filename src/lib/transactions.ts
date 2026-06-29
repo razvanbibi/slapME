@@ -17,6 +17,7 @@ import {
 const network = STACKS_MAINNET;
 
 export async function slap() {
+ 
   return openContractCall({
     network,
 
@@ -30,11 +31,11 @@ export async function slap() {
     postConditionMode: PostConditionMode.Allow,
 
     onFinish: (data) => {
-      console.log("Slap TX Success:", data);
+      console.log("TX Success:", data);
     },
 
     onCancel: () => {
-      console.log("Slap cancelled");
+      console.log("TX Cancelled");
     },
   });
 }
