@@ -442,7 +442,11 @@ export default function Home() {
                         <span
                           className={`font-semibold text-sm ${item.action === "slap"
                             ? "text-red-500"
-                            : "text-violet-600"
+                            : item.action === "punch"
+                              ? "text-violet-600"
+                              : item.action === "patch"
+                                ? "text-green-600"
+                                : "text-blue-600"
                             }`}
                         >
                           {item.action}
