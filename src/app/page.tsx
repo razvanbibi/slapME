@@ -32,6 +32,19 @@ export default function Home() {
         setGlobalPunches(
           Number(stats.value.punches.value)
         );
+        if (wallet.connected) {
+
+          const user = await getUserStats(wallet.address);
+
+          setUserSlaps(
+            Number(user.value.slaps.value)
+          );
+
+          setUserPunches(
+            Number(user.value.punches.value)
+          );
+
+        }
         const last = await getLastActivityId();
 
         const lastId = Number(last.value);
