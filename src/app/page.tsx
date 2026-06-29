@@ -12,8 +12,8 @@ export default function Home() {
   const [userSlaps] = useState(24);
   const [userPunches] = useState(17);
 
-  const [globalSlaps] = useState(1245);
-  const [globalPunches] = useState(872);
+  const [globalSlaps, setGlobalSlaps] = useState(0);
+  const [globalPunches, setGlobalPunches] = useState(0);
 
   const recentActivity = [
     {
@@ -57,12 +57,12 @@ export default function Home() {
     }
 
     try {
-  console.log("Before slap()");
-  await slap();
-  console.log("After slap()");
-} catch (err) {
-  console.error("SLAP ERROR:", err);
-}
+      console.log("Before slap()");
+      await slap();
+      console.log("After slap()");
+    } catch (err) {
+      console.error("SLAP ERROR:", err);
+    }
   };
 
   const handlePunch = async () => {
