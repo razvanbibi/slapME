@@ -4,6 +4,10 @@ import Image from "next/image";
 import { useState } from "react";
 import { useWallet } from "@/lib/wallet";
 import { slap, punch } from "@/lib/transactions";
+import { useEffect } from "react";
+import {
+  getGlobalStats,
+} from "@/lib/read";
 
 
 
