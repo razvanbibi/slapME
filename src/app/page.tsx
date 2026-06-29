@@ -22,17 +22,13 @@ export default function Home() {
     async function load() {
       try {
         const stats = await getGlobalStats();
-
         console.log("Global Stats:", stats);
-
         setGlobalSlaps(
           Number(stats.value.slaps.value)
         );
-
         setGlobalPunches(
           Number(stats.value.punches.value)
         );
-
       } catch (err) {
         console.error("Read Error:", err);
       }
