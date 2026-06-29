@@ -37,7 +37,7 @@ export default function Home() {
         const activities = [];
         for (
           let id = lastId;
-          id >= Math.max(1, lastId - 9);
+          id >= Math.max(1, lastId - 4);
           id--
         ) {
 
