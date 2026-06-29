@@ -7,6 +7,7 @@ import { slap, punch } from "@/lib/transactions";
 
 import {
   getGlobalStats,
+  getUserStats,
   getLastActivityId,
   getActivity,
 } from "@/lib/read";
