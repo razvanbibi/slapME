@@ -19,17 +19,26 @@ export default function Home() {
   const [globalSlaps, setGlobalSlaps] = useState(0);
   const [globalPunches, setGlobalPunches] = useState(0);
   useEffect(() => {
-
     async function load() {
+      try {
+        const stats = await getGlobalStats();
 
-      const stats = await getGlobalStats();
+        console.log("Global Stats:", stats);
 
-      console.log(stats);
+        setGlobalSlaps(
+          Number(stats.value.slaps.value)
+        );
 
+        setGlobalPunches(
+          Number(stats.value.punches.value)
+        );
+
+      } catch (err) {
+        console.error("Read Error:", err);
+      }
     }
 
     load();
-
   }, []);
 
   const recentActivity = [
@@ -140,7 +149,7 @@ export default function Home() {
             <div className="flex items-center gap-2">
 
               <div className="flex items-center gap-2 bg-slate-800 text-white rounded-lg px-3 py-2 text-sm font-medium">
-                <span>Stacks Testnet</span>
+                <span>Stacks Mainnet</span>
                 <span className="w-2 h-2 rounded-full bg-green-400"></span>
               </div>
 
