@@ -87,7 +87,7 @@ export default function Home() {
     }
 
     load();
-  }, []);
+  }, [wallet.connected, wallet.address]);
 
   const [recentActivity, setRecentActivity] = useState<any[]>([]);
 
