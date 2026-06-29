@@ -1,27 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useWallet } from "@/lib/wallet";
 import { slap, punch } from "@/lib/transactions";
-import { useEffect } from "react";
+
 import {
   getGlobalStats,
 } from "@/lib/read";
 
-useEffect(() => {
 
-  async function load() {
-
-    const stats = await getGlobalStats();
-
-    console.log(stats);
-
-  }
-
-  load();
-
-}, []);
 
 export default function Home() {
   const { wallet, connectWallet } = useWallet();
@@ -30,6 +18,19 @@ export default function Home() {
 
   const [globalSlaps, setGlobalSlaps] = useState(0);
   const [globalPunches, setGlobalPunches] = useState(0);
+  useEffect(() => {
+
+    async function load() {
+
+      const stats = await getGlobalStats();
+
+      console.log(stats);
+
+    }
+
+    load();
+
+  }, []);
 
   const recentActivity = [
     {
