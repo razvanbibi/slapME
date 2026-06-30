@@ -16,6 +16,25 @@ export function useWallet() {
     address: "",
   });
 
+  useEffect(() => {
+
+    if (userSession.isUserSignedIn()) {
+
+      const data = userSession.loadUserData();
+
+      const address =
+        data.profile.stxAddress.mainnet ||
+        data.profile.stxAddress.testnet;
+
+      setWallet({
+        connected: true,
+        address,
+      });
+
+    }
+
+  }, []);
+
   const connectWallet = async () => {
     try {
       await showConnect({
