@@ -79,8 +79,9 @@ export function useWallet() {
   };
 
   return {
-    wallet,
-    setWallet,
-    connectWallet,
-  };
+  wallet,
+  setWallet,
+  connectWallet,
+  disconnectWallet,
+};
 }
