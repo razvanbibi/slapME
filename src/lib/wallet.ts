@@ -14,6 +14,7 @@ export function useWallet() {
   const [wallet, setWallet] = useState({
     connected: false,
     address: "",
+    userSession: null as UserSession | null,
   });
 
   useEffect(() => {
@@ -29,6 +30,7 @@ export function useWallet() {
       setWallet({
         connected: true,
         address,
+        userSession,
       });
 
     }
@@ -51,10 +53,11 @@ export function useWallet() {
           const address =
             data.profile.stxAddress.mainnet ||
             data.profile.stxAddress.testnet;
-
+console.log("Wallet Connected:", address);
           setWallet({
             connected: true,
             address,
+            userSession,
           });
         },
 
@@ -74,6 +77,7 @@ export function useWallet() {
     setWallet({
       connected: false,
       address: "",
+      userSession,
     });
 
   };

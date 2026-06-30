@@ -1,6 +1,6 @@
 "use client";
 
-import { openContractCall } from "@stacks/connect";
+import { openContractCall } from "@stacks/connect-react";
 
 import {
   AnchorMode,
@@ -17,7 +17,8 @@ import {
 const network = STACKS_MAINNET;
 
 export async function slap() {
- 
+  
+ console.log((window as any).LeatherProvider);
   return openContractCall({
     network,
 
@@ -41,6 +42,8 @@ export async function slap() {
 }
 
 export async function punch() {
+
+  console.log("Calling openContractCall (Punch)...");
   return openContractCall({
     network,
 
