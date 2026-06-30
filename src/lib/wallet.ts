@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { showConnect } from "@stacks/connect";
-import { UserSession, AppConfig } from "@stacks/connect";
+import { UserSession, AppConfig } from "@stacks/auth";
 
 const appConfig = new AppConfig(["store_write"]);
 
