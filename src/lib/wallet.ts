@@ -67,6 +67,17 @@ export function useWallet() {
     }
   };
 
+  const disconnectWallet = () => {
+
+    userSession.signUserOut();
+
+    setWallet({
+      connected: false,
+      address: "",
+    });
+
+  };
+
   return {
     wallet,
     setWallet,
