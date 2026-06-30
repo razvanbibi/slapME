@@ -15,7 +15,11 @@ import {
 
 
 export default function Home() {
-  const { wallet, connectWallet } = useWallet();
+  const {
+    wallet,
+    connectWallet,
+    disconnectWallet,
+  } = useWallet();
   const [userSlaps, setUserSlaps] = useState(0);
   const [userPunches, setUserPunches] = useState(0);
 
