@@ -180,14 +180,37 @@ export default function Home() {
                 <span className="w-2 h-2 rounded-full bg-green-400"></span>
               </div>
 
-              <button
-                onClick={connectWallet}
-                className="cursor-pointer bg-violet-600 hover:bg-violet-700 text-white rounded-lg px-4 py-2 text-sm font-semibold"
-              >
-                {wallet.connected
-                  ? `${wallet.address.slice(0, 5)}...${wallet.address.slice(-4)}`
-                  : "Connect Wallet"}
-              </button>
+              {wallet.connected ? (
+
+                <div className="flex items-center gap-2">
+
+                  <div className="bg-violet-600 text-white rounded-lg px-4 py-2 text-sm font-semibold">
+
+                    {wallet.address.slice(0, 5)}...
+                    {wallet.address.slice(-4)}
+
+                  </div>
+
+                  <button
+                    onClick={disconnectWallet}
+                    title="Disconnect Wallet"
+                    className="cursor-pointer w-9 h-9 rounded-lg bg-red-600 hover:bg-red-700 text-white flex items-center justify-center"
+                  >
+                    ↩
+                  </button>
+
+                </div>
+
+              ) : (
+
+                <button
+                  onClick={connectWallet}
+                  className="cursor-pointer bg-violet-600 hover:bg-violet-700 text-white rounded-lg px-4 py-2 text-sm font-semibold"
+                >
+                  Connect Wallet
+                </button>
+
+              )}
 
             </div>
           </div>
