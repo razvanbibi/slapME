@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { showConnect } from "@stacks/connect";
+import { UserSession, AppConfig } from "@stacks/connect";
 
 export function useWallet() {
   const [wallet, setWallet] = useState({
