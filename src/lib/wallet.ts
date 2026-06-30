@@ -4,6 +4,12 @@ import { useEffect, useState } from "react";
 import { showConnect } from "@stacks/connect";
 import { UserSession, AppConfig } from "@stacks/connect";
 
+const appConfig = new AppConfig(["store_write"]);
+
+const userSession = new UserSession({
+  appConfig,
+});
+
 export function useWallet() {
   const [wallet, setWallet] = useState({
     connected: false,
